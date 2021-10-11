@@ -63,15 +63,16 @@ switch (operator) {
 const redemption = 420;
 let discount;
 
-if (redemption < 350){
+if (0 <= redemption && redemption <= 350) {
     discount = 0;
-} else if ( 351 < redemption < 1350) {
+} else if (350 <= redemption && redemption <= 1350) {
     discount = 15;
-} else if(1351 < redemption < 2700) {
+} else if (1351 <= redemption && redemption <= 2700) {
     discount = 30;
-} else if (2701 < redemption < 6500) {
+} else if (2701 <= redemption && redemption <= 6500) {
     discount = 45;
 } 
+console.log(discount);
 
 module.exports = {
     z1,
