@@ -15,7 +15,7 @@ for (let i = 1; i <= n; i++) {
 
 whileFactorial = 1;
 let i = 1;
-while (i <= n){
+while (i <= n) {
   whileFactorial *= i;
   i++;
 }
@@ -25,7 +25,7 @@ let j = 1;
 do {
   doFactorial *= j;
   j++;
-} while(j <= n)
+} while (j <= n)
 
 /** Task: 2
  * return the concatenated string from an array of substring
@@ -36,7 +36,7 @@ let str;
 const substr = ["I", " love", " JS"];
 
 str = "";
-for (elementOfArray of substr){
+for (elementOfArray of substr) {
   str += elementOfArray;
 }
 
@@ -54,7 +54,7 @@ const personIncomes = {
 };
 
 totalIncome = 0;
-for(let keyOfObject in personIncomes){
+for (let keyOfObject in personIncomes) {
   totalIncome += personIncomes[keyOfObject];
 }
 

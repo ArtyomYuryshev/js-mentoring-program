@@ -45,7 +45,7 @@ switch (operator) {
     case "divide":
         task2 = alpha / beta;
         break;
-    default: 
+    default:
         return "U do smth wrong";
 }
 
@@ -71,7 +71,7 @@ if (0 <= redemption && redemption <= 350) {
     discount = 30;
 } else if (2701 <= redemption && redemption <= 6500) {
     discount = 45;
-} 
+}
 
 module.exports = {
     z1,
