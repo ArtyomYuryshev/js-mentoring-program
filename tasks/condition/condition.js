@@ -72,7 +72,6 @@ if (0 <= redemption && redemption <= 350) {
 } else if (2701 <= redemption && redemption <= 6500) {
     discount = 45;
 } 
-console.log(discount);
 
 module.exports = {
     z1,
