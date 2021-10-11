@@ -41,7 +41,7 @@ let fifth = arr[4];
 /**
  * TODO create variable named human and set value as object with key firstName and value "John"
  */
-let human = {firstName: "John"};
+let human = { firstName: "John" };
 
 /**
  * TODO set new key of human object named lastName and value "Dou"
