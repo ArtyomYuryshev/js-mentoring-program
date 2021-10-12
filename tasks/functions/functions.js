@@ -5,12 +5,14 @@
  * Arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  */
 
+const { str } = require("../cycles/cycles");
+
 /**
  * write function that will do sum for two numbers
  *
  */
 function sum(a, b) {
-
+	return a + b;
 }
 
 /**
@@ -21,7 +23,11 @@ function sum(a, b) {
  * }
  */
 function getFullName(object) {
-
+	fullName = "";
+	for (let keyOfObject in object) {
+		fullName += object[keyOfObject] + " ";
+	}
+	return fullName.trim();
 }
 
 /**
@@ -29,7 +35,11 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	if (n % 2 == 0) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 /**
@@ -38,8 +48,26 @@ function isOdd(n) {
  * console.log(getShortest(["one", "two", "three"])) // one
  */
 function getShortest(wordArray) {
-
+	return wordArray.reduce((a, b) => a.length <= b.length ? a : b);
 }
+
+// function getShortest(wordArray) {
+// 	return wordArray.sort((a, b) => a.length - b.length)[0];	
+// }
+//console.log(getShortest(Array));
+
+// function getShortest(wordsArr) {
+// 	let shorterWords = [wordsArr[0]];
+// 	for (let i = 1; i < wordsArr.length; i++) {
+// 		if (wordsArr[i].length < shorterWords[0].length) {
+// 			shorterWords.pop();
+// 			shorterWords.push(wordsArr[i]);
+// 		} else if (wordsArr[i].length == shorterWords[0].length) {
+// 			shorterWords.push(wordsArr[i]);
+// 		}
+// 	}
+// 	return ("Shorters words are: " + shorterWords);
+// }
 
 /**
  * write function that returns word google with given numbers of "o" symbols
@@ -47,7 +75,7 @@ function getShortest(wordArray) {
  * console.log(getGoogle(5)) // gooooogle
  */
 function getGoogle(n) {
-
+	return "g" + "o".repeat(n) + "gle";
 }
 
 /**
@@ -62,8 +90,14 @@ function getGoogle(n) {
  * }
  */
 function getUser(firstName, lastName, age) {
-
+	let user = {
+		firstName,
+		lastName,
+		age
+	}
+	return user;
 }
+console.log(getUser("Pavlik", "Morozov", 24));
 
 /**
  * write function that calculates total path traveled.
@@ -89,7 +123,7 @@ function getTotalPath(path) {
 
 function discountFunction(percentage) {
 
-	return function (amount) {};
+	return function (amount) { };
 }
 
 /**
