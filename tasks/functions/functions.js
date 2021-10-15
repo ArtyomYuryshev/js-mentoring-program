@@ -11,6 +11,7 @@ const { str } = require("../cycles/cycles");
  * write function that will do sum for two numbers
  *
  */
+
 function sum(a, b) {
 	return a + b;
 }
@@ -22,6 +23,7 @@ function sum(a, b) {
  *    lastName: "Dou"
  * }
  */
+
 function getFullName(object) {
 	fullName = "";
 	for (let keyOfObject in object) {
@@ -34,6 +36,7 @@ function getFullName(object) {
  * write fuction that checks if number is odd
  * true if odd, false if even
  */
+
 function isOdd(n) {
 	if (n % 2 == 0) {
 		return false;
@@ -47,33 +50,17 @@ function isOdd(n) {
  * @example
  * console.log(getShortest(["one", "two", "three"])) // one
  */
+
 function getShortest(wordArray) {
 	return wordArray.reduce((a, b) => a.length <= b.length ? a : b);
 }
-
-// function getShortest(wordArray) {
-// 	return wordArray.sort((a, b) => a.length - b.length)[0];	
-// }
-//console.log(getShortest(Array));
-
-// function getShortest(wordsArr) {
-// 	let shorterWords = [wordsArr[0]];
-// 	for (let i = 1; i < wordsArr.length; i++) {
-// 		if (wordsArr[i].length < shorterWords[0].length) {
-// 			shorterWords.pop();
-// 			shorterWords.push(wordsArr[i]);
-// 		} else if (wordsArr[i].length == shorterWords[0].length) {
-// 			shorterWords.push(wordsArr[i]);
-// 		}
-// 	}
-// 	return ("Shorters words are: " + shorterWords);
-// }
 
 /**
  * write function that returns word google with given numbers of "o" symbols
  * @example
  * console.log(getGoogle(5)) // gooooogle
  */
+
 function getGoogle(n) {
 	return "g" + "o".repeat(n) + "gle";
 }
@@ -89,7 +76,8 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
+
+function getUser(firstName = null, lastName = null, age = null) {
 	let user = {
 		firstName,
 		lastName,
@@ -97,7 +85,6 @@ function getUser(firstName, lastName, age) {
 	}
 	return user;
 }
-console.log(getUser("Pavlik", "Morozov", 24));
 
 /**
  * write function that calculates total path traveled.
@@ -106,6 +93,11 @@ console.log(getUser("Pavlik", "Morozov", 24));
  */
 
 function getTotalPath(path) {
+	let totalDistance = null;
+	for (let i = 0; i < path.length; i++){
+		totalDistance += path[i].distance;
+	}
+	return totalDistance;
 
 }
 
@@ -122,8 +114,10 @@ function getTotalPath(path) {
  */
 
 function discountFunction(percentage) {
-
-	return function (amount) { };
+	let discount = 0;
+	return function (amount) {
+		return discount = amount / 100 * (100 - percentage);
+	 };
 }
 
 /**
@@ -140,12 +134,19 @@ const myObject = {
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
 		//write your code here
+		for (const objectKey in myObject) {
+			console.log(objectKey);
+		}
 	},
 	call() {
 		//write your code here
+		return "My name is " + this.name + " " + this.lastName + " and I am " + this.age + " years old. My best friend is " + this.friends[2];
 	}
-
 };
+
+myObject.keys();
+console.log(myObject.call());
+
 
 module.exports = {
 	sum,
