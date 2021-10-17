@@ -116,7 +116,8 @@ function getTotalPath(path) {
 function discountFunction(percentage) {
 	let discount = 0;
 	return function (amount) {
-		return discount = amount / 100 * (100 - percentage);
+		discount = amount / 100 * (100 - percentage);
+		return +discount.toFixed(2);
 	 };
 }
 
