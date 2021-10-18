@@ -32,10 +32,9 @@ do {
  * assign the result to variable 'str'
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
  */
-let str;
+let str = "";
 const substr = ["I", " love", " JS"];
 
-str = "";
 for (elementOfArray of substr) {
   str += elementOfArray;
 }

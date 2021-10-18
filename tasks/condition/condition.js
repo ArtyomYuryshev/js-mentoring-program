@@ -17,7 +17,7 @@ if (y <= 9) {
     z1 = x * y;
 }
 
-(y <= 9) ? z2 = x + y : z2 = x * y;
+z2 = (y <= 9) ? x + y : x * y;
 
 
 /** Task: 2
@@ -65,11 +65,11 @@ let discount;
 
 if (0 <= redemption && redemption <= 350) {
     discount = 0;
-} else if (350 <= redemption && redemption <= 1350) {
+} else if (350 < redemption && redemption <= 1350) {
     discount = 15;
-} else if (1351 <= redemption && redemption <= 2700) {
+} else if (1351 < redemption && redemption <= 2700) {
     discount = 30;
-} else if (2701 <= redemption && redemption <= 6500) {
+} else if (2701 < redemption && redemption <= 6500) {
     discount = 45;
 }
 
