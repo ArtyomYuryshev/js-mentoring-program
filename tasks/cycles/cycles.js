@@ -8,13 +8,36 @@
 let forFactorial, whileFactorial, doFactorial;
 const n = 10; //10! = 3628800
 
+forFactorial = 1;
+for (let i = 1; i <= n; i++) {
+  forFactorial *= i;
+}
+
+whileFactorial = 1;
+let i = 1;
+while (i <= n) {
+  whileFactorial *= i;
+  i++;
+}
+
+doFactorial = 1;
+let j = 1;
+do {
+  doFactorial *= j;
+  j++;
+} while (j <= n)
+
 /** Task: 2
  * return the concatenated string from an array of substring
  * assign the result to variable 'str'
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
  */
-let str;
+let str = "";
 const substr = ["I", " love", " JS"];
+
+for (elementOfArray of substr) {
+  str += elementOfArray;
+}
 
 /** Task: 3
  * calculate a total of income of certain person
@@ -28,6 +51,11 @@ const personIncomes = {
   interestOnDeposit: 250,
   otherExpences: -300
 };
+
+totalIncome = 0;
+for (let keyOfObject in personIncomes) {
+  totalIncome += personIncomes[keyOfObject];
+}
 
 module.exports = {
   forFactorial,
