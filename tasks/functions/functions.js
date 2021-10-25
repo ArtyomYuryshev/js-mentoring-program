@@ -125,7 +125,7 @@ const myObject = {
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
 		//write your code here
-		for (const objectKey in myObject) {
+		for (const objectKey in this) {
 			console.log(objectKey);
 		}
 	},
@@ -134,9 +134,6 @@ const myObject = {
 		return "My name is " + this.name + " " + this.lastName + " and I am " + this.age + " years old. My best friend is " + this.friends[2];
 	}
 };
-
-myObject.keys();
-console.log(myObject.call());
 
 
 module.exports = {
