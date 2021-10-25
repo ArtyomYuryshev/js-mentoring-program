@@ -25,11 +25,7 @@ function sum(a, b) {
  */
 
 function getFullName(object) {
-	fullName = "";
-	for (let keyOfObject in object) {
-		fullName += object[keyOfObject] + " ";
-	}
-	return fullName.trim();
+	return object.firstName + " " + object.lastName
 }
 
 /**
@@ -38,11 +34,7 @@ function getFullName(object) {
  */
 
 function isOdd(n) {
-	if (n % 2 == 0) {
-		return false;
-	} else {
-		return true;
-	}
+	return (n % 2 !== 0)
 }
 
 /**
@@ -78,12 +70,11 @@ function getGoogle(n) {
  */
 
 function getUser(firstName = null, lastName = null, age = null) {
-	let user = {
-		firstName,
-		lastName,
-		age
-	}
-	return user;
+	return {
+		firstName: firstName,
+		lastName: lastName,
+		age: age
+	};
 }
 
 /**
@@ -93,12 +84,11 @@ function getUser(firstName = null, lastName = null, age = null) {
  */
 
 function getTotalPath(path) {
-	let totalDistance = null;
-	for (let i = 0; i < path.length; i++){
-		totalDistance += path[i].distance;
+	let totalDistance = 0;
+	for (let value of path) {
+		totalDistance += value.distance;
 	}
 	return totalDistance;
-
 }
 
 /**
@@ -118,7 +108,7 @@ function discountFunction(percentage) {
 	return function (amount) {
 		discount = amount / 100 * (100 - percentage);
 		return +discount.toFixed(2);
-	 };
+	};
 }
 
 /**
