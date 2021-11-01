@@ -5,12 +5,15 @@
  * Arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  */
 
+const { str } = require("../cycles/cycles");
+
 /**
  * write function that will do sum for two numbers
  *
  */
-function sum(a, b) {
 
+function sum(a, b) {
+	return a + b;
 }
 
 /**
@@ -20,16 +23,18 @@ function sum(a, b) {
  *    lastName: "Dou"
  * }
  */
-function getFullName(object) {
 
+function getFullName(object) {
+	return object.firstName + " " + object.lastName
 }
 
 /**
  * write fuction that checks if number is odd
  * true if odd, false if even
  */
-function isOdd(n) {
 
+function isOdd(n) {
+	return (n % 2 !== 0)
 }
 
 /**
@@ -37,8 +42,9 @@ function isOdd(n) {
  * @example
  * console.log(getShortest(["one", "two", "three"])) // one
  */
-function getShortest(wordArray) {
 
+function getShortest(wordArray) {
+	return wordArray.reduce((a, b) => a.length <= b.length ? a : b);
 }
 
 /**
@@ -46,8 +52,9 @@ function getShortest(wordArray) {
  * @example
  * console.log(getGoogle(5)) // gooooogle
  */
-function getGoogle(n) {
 
+function getGoogle(n) {
+	return "g" + "o".repeat(n) + "gle";
 }
 
 /**
@@ -61,8 +68,13 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
 
+function getUser(firstName = null, lastName = null, age = null) {
+	return {
+		firstName: firstName,
+		lastName: lastName,
+		age: age
+	};
 }
 
 /**
@@ -72,7 +84,11 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-
+	let totalDistance = 0;
+	for (let value of path) {
+		totalDistance += value.distance;
+	}
+	return totalDistance;
 }
 
 /**
@@ -88,8 +104,11 @@ function getTotalPath(path) {
  */
 
 function discountFunction(percentage) {
-
-	return function (amount) {};
+	let discount = 0;
+	return function (amount) {
+		discount = amount / 100 * (100 - percentage);
+		return +discount.toFixed(2);
+	};
 }
 
 /**
@@ -106,12 +125,16 @@ const myObject = {
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
 		//write your code here
+		for (const objectKey in this) {
+			console.log(objectKey);
+		}
 	},
 	call() {
 		//write your code here
+		return "My name is " + this.name + " " + this.lastName + " and I am " + this.age + " years old. My best friend is " + this.friends[2];
 	}
-
 };
+
 
 module.exports = {
 	sum,
