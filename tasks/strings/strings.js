@@ -9,7 +9,7 @@
  * console.log(reverseString(123)) // 'This is not a string!'
  */
 function reverseString(str) {
-  return (isNaN(str)) ? str.split("").reverse().join("") : 'This is not a string!';
+  return (typeof (str) === 'string') ? str.split("").reverse().join("") : 'This is not a string!';
 }
 
 /**
@@ -39,7 +39,7 @@ function centuryFromYear(year) {
  */
 function strCount(str, char) {
   const compare = str.match(RegExp(char, "g"));
-  return (compare == null) ? 0 : compare.length;
+  return (compare === null) ? 0 : compare.length;
 }
 
 /**
@@ -54,7 +54,7 @@ function strCount(str, char) {
  * console.log(truncateString('This', 6)) // 'This'
  */
 function truncateString(str, num) {
-  return (str.length == num) ? str : str.slice(0, num) + "...";
+  return (str.length === num) ? str : str.slice(0, num) + "...";
 }
 
 /**
