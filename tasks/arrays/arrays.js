@@ -13,7 +13,6 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
-	//console.log(chars.map(value => value.name)); ПОЧЕМУ ТАК НЕЛЬЗЯ?
 	chars.forEach(value => console.log(value.name));
 }
 
@@ -66,7 +65,7 @@ function isAnyFishPerson(chars) {
  */
 function minItem(arr) {
 	//PLACE YOUR CODE HERE
-	return arr.indexOf(Math.min(...arr)); //Не совсем понял, как работают "...", но они работают
+	return arr.indexOf(Math.min(...arr));
 }
 
 module.exports = {
