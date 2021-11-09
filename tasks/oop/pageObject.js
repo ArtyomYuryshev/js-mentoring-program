@@ -20,21 +20,21 @@
  */
 
 class BasePage {
-	constructor (url) {
+	constructor(url) {
 		this.url = url;
-		};
-		open(pageName) {
-			return 'Open this ${this.url}/${pageName}';
-		};
-		get footer () {
-			return new Component ('footer');
-		};
-		get header () {
-			return new Component ('header');
-		};	
+	};
+	open(pageName) {
+		return `Open this ${this.url}/${pageName}`;
+	};
+	get footer() {
+		return new Component('footer');
+	};
+	get header() {
+		return new Component('header');
+	};
 }
 
-class LoginPage extends BasePage{
+class LoginPage extends BasePage {
 	constructor(url, name) {
 		super(url);
 		this.name = name;
@@ -45,11 +45,11 @@ class LoginPage extends BasePage{
 }
 
 class Component {
-	constructor (type) {
+	constructor(type) {
 		this.type = type;
 	};
 	review() {
-		return 'I can review ${this.type}';
+		return `I can review ${this.type}`;
 	};
 }
 
