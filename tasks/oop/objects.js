@@ -15,8 +15,6 @@ const person = {
  * create object student that has property grade and method getGrade
  * set person as prototype of student
  */
-
-// В задании нет про student "Э"should have getFullName method:"
 const student = {
 	firstName: "Vasya",
 	lastName: "Ivanov",

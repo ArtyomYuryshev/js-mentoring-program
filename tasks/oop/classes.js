@@ -10,7 +10,6 @@
  */
 //put your code here
 class Person {
-
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,7 +25,6 @@ class Person {
  * 2) constructor that pass grade to the object
  * 3) method getGrade that returns property grade
  */
-
 //put your code here
 class Student extends Person {
     constructor(firstName, lastName, grade) {
