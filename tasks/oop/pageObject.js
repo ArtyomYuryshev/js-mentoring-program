@@ -22,15 +22,11 @@
 class BasePage {
 	constructor(url) {
 		this.url = url;
+		this.footer = new Component('footer');
+		this.header = new Component('header');
 	};
 	open(pageName) {
 		return `Open this ${this.url}/${pageName}`;
-	};
-	get footer() {
-		return new Component('footer');
-	};
-	get header() {
-		return new Component('header');
 	};
 }
 
