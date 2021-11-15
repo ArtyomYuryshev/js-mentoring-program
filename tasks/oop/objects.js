@@ -21,7 +21,8 @@ const student = {
 		return this.grade;
 	}
 };
-student.__proto__ = person; // to-do: https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/Object_prototypes
+//student.__proto__ = person; // to-do: https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/Object_prototypes
+Object.setPrototypeOf(student, person); // to-do https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
 
 /**
  * create new instance of student using Object.create
