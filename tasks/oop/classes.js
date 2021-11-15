@@ -9,6 +9,15 @@
  * 3) method getFullName
  */
 //put your code here
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    };
+    getFullName() {
+        return this.firstName + " " + this.lastName;
+    };
+};
 
 /**
  * implement class Student that extends Person with:
@@ -17,9 +26,18 @@
  * 3) method getGrade that returns property grade
  */
 //put your code here
+class Student extends Person {
+    constructor(firstName, lastName, grade) {
+        super(firstName, lastName);
+        this.grade = grade;
+    };
+    getGrade() {
+        return this.grade;
+    };
+}
 
-const person = ''; //create instance of class person
-const student = ''; //create instance of class student
+const person = new Person("Petya", "Petrov"); //create instance of class person
+const student = new Student("Ivan", "Ivanov", "100500"); //create instance of class student
 
 module.exports = {
     person,
