@@ -16,23 +16,17 @@ const person = {
  * set person as prototype of student
  */
 const student = {
-	firstName: "Vasya",
-	lastName: "Ivanov",
 	grade: "100500",
 	getGrade() {
 		return this.grade;
-	},
-	getFullName() {
-		return this.firstName + " " + this.lastName;
 	}
 };
+student.__proto__ = person; // to-do: https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/Object_prototypes
 
 /**
  * create new instance of student using Object.create
  */
-const student2 = Object.create(student, {
-	firstName: { value: "Nevasya" }
-});
+const student2 = Object.create(student);
 
 module.exports = {
 	person,
