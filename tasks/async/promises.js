@@ -14,7 +14,7 @@ const {
  */
 
 function promiseResolve() {
-	//PLACE YOUR CODE HERE:
+	return Promise.resolve('Resolved!'); //мб я что-то не понял в задании, но решил "перебором"
 }
 
 /**
@@ -25,7 +25,7 @@ function promiseResolve() {
  */
 
 function promiseReject() {
-	//PLACE YOUR CODE HERE:
+	return Promise.reject('Rejected!');
 }
 
 /**
@@ -34,8 +34,14 @@ function promiseReject() {
  * Should reject when param === false with "Rejected!" string
  */
 
-function fullPromise(param) {
-	//PLACE YOUR CODE HERE:
+function fullPromise(param) { //to-do https://learn.javascript.ru/promise
+	let allPromise = new Promise(function(resolve, reject) {
+		if (param === true) {
+			resolve("Resolved!");
+		} else {
+			reject("Rejected!");
+		}
+	});
 }
 
 /**
