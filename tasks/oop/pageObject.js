@@ -20,15 +20,33 @@
  */
 
 class BasePage {
-
+	constructor(url) {
+		this.url = url;
+		this.footer = new Component('footer');
+		this.header = new Component('header');
+	};
+	open(pageName) {
+		return `Open this ${this.url}/${pageName}`;
+	};
 }
 
-class LoginPage {
-
+class LoginPage extends BasePage {
+	constructor(url, name) {
+		super(url);
+		this.name = name;
+	};
+	open() {
+		return super.open(this.name);
+	};
 }
 
 class Component {
-
+	constructor(type) {
+		this.type = type;
+	};
+	review() {
+		return `I can review ${this.type}`;
+	};
 }
 
 module.exports = {
