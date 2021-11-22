@@ -14,7 +14,7 @@ const {
  */
 
 function promiseResolve() {
-	return Promise.resolve('Resolved!'); //мб я что-то не понял в задании, но решил "перебором"
+	return Promise.resolve('Resolved!');
 }
 
 /**
@@ -35,13 +35,7 @@ function promiseReject() {
  */
 
 function fullPromise(param) { //to-do https://learn.javascript.ru/promise
-	let allPromise = new Promise(function(resolve, reject) {
-		if (param === true) {
-			resolve("Resolved!");
-		} else {
-			reject("Rejected!");
-		}
-	});
+	return new Promise((resolve, reject) => (param === true) ? resolve("Resolved!") : reject("Rejected!")); //зачем тогда resolve / reject если засунули всё в обычный if else?
 }
 
 /**
@@ -54,7 +48,7 @@ function fullPromise(param) { //to-do https://learn.javascript.ru/promise
 let chainingResult = '';
 
 async function promisesChaining() {
-	//PLACE YOUR CODE HERE:
+	return firstPromise().then(result => chainingResult + result).then(() => secondPromise).then(newResult => chainingResult + newResult)
 }
 
 
