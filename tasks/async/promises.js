@@ -48,17 +48,11 @@ function fullPromise(param) { //to-do https://learn.javascript.ru/promise
 let chainingResult = '';
 
 async function promisesChaining() {
-	//вызвал промис
-	return firstPromise()
-		//затем соединяем с новой функцией, в которую передаём результат промиса
-		.then(function (result) {
-			//приравниваем нашу переменную к результату
+	return firstPromise().then(function (result) {
 			chainingResult = chainingResult + result;
-			//тригерим второй промис и возвращаем его результат
 			return secondPromise();
 		}).then(function (result) {
-			//добавляем к переменной результат второго промиса
-			chainingResult = chainingResult + " " + result;
+			return chainingResult = chainingResult + " " + result;
 		})
 }
 
@@ -71,7 +65,7 @@ async function promisesChaining() {
  */
 
 async function getAnimals() {
-	//PLACE YOUR CODE HERE:
+	return Promise.all([getDogs(), getCats(), getBirds()]);
 }
 
 module.exports = {
