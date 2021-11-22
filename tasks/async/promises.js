@@ -48,7 +48,11 @@ function fullPromise(param) { //to-do https://learn.javascript.ru/promise
 let chainingResult = '';
 
 async function promisesChaining() {
-	return firstPromise().then(result => chainingResult + result).then(() => secondPromise).then(newResult => chainingResult + newResult)
+	return firstPromise()
+	.then(result => chainingResult + result)
+	.then(() => secondPromise)
+	.then(newResult => chainingResult + newResult);
+	//console.log(chainingResult);
 }
 
 
