@@ -49,11 +49,11 @@ let chainingResult = '';
 
 async function promisesChaining() {
 	return firstPromise().then(function (result) {
-			chainingResult = chainingResult + result;
-			return secondPromise();
-		}).then(function (result) {
-			return chainingResult = chainingResult + " " + result;
-		})
+		chainingResult = chainingResult + result;
+		return secondPromise();
+	}).then(function (result) {
+		return chainingResult = chainingResult + " " + result;
+	})
 }
 
 /**

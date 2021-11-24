@@ -22,7 +22,7 @@ const {
  * 
  */
 async function asyncPromiseResolve() {
-  //PLACE YOUR CODE HERE:
+  return await promiseResolve() + " with async await";
 }
 
 /**
@@ -32,7 +32,12 @@ async function asyncPromiseResolve() {
  * @returns {Promise<"Rejected! with async await">}
  */
 async function asyncPromiseReject() {
-  //PLACE YOUR CODE HERE:
+  try {
+    await promiseReject()
+  }
+  catch (result) {
+    return result + " with async await";
+  }
 }
 
 /**
@@ -42,7 +47,11 @@ async function asyncPromiseReject() {
  * @returns 
  */
 async function asyncPromiseAll() {
-  //PLACE YOUR CODE HERE:
+  let a = [];
+  a.push(await getDogs(), await getCats(), await getBirds());
+  return a;
+  //чёт мне кажется, что от меня тут хотелось другое, но оно работает и я использовал async/await
+  //хотя в './utils/utilPromises' там же "async function getAnimals()"
 }
 
 module.exports = {
