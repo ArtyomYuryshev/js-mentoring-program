@@ -55,7 +55,7 @@ async function asyncPromiseReject() {
 // }
 async function asyncPromiseAll() {
   return Promise.all([getDogs(), getCats(), getBirds()]);
-  //в чём тогда разница от задания './utils/utilPromises' ask-5 ??"
+  //в чём тогда разница от задания './utils/utilPromises' Task-5 ??"
 }
 
 module.exports = {
