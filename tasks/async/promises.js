@@ -14,7 +14,7 @@ const {
  */
 
 function promiseResolve() {
-	//PLACE YOUR CODE HERE:
+	return Promise.resolve('Resolved!');
 }
 
 /**
@@ -25,7 +25,7 @@ function promiseResolve() {
  */
 
 function promiseReject() {
-	//PLACE YOUR CODE HERE:
+	return Promise.reject('Rejected!');
 }
 
 /**
@@ -34,8 +34,8 @@ function promiseReject() {
  * Should reject when param === false with "Rejected!" string
  */
 
-function fullPromise(param) {
-	//PLACE YOUR CODE HERE:
+function fullPromise(param) { //to-do https://learn.javascript.ru/promise
+	return new Promise((resolve, reject) => (param === true) ? resolve("Resolved!") : reject("Rejected!")); //зачем тогда resolve / reject если засунули всё в обычный if else?
 }
 
 /**
@@ -48,9 +48,15 @@ function fullPromise(param) {
 let chainingResult = '';
 
 async function promisesChaining() {
-	//PLACE YOUR CODE HERE:
+	return firstPromise()
+		.then(function (result) {
+			chainingResult = chainingResult + result;
+			return secondPromise();
+		})
+		.then(function (result) {
+			return chainingResult = chainingResult + " " + result;
+		})
 }
-
 
 /**
  * Task-5: Implement a function getAnimals() that will return the result of
@@ -61,7 +67,7 @@ async function promisesChaining() {
  */
 
 async function getAnimals() {
-	//PLACE YOUR CODE HERE:
+	return Promise.all([getDogs(), getCats(), getBirds()]);
 }
 
 module.exports = {
