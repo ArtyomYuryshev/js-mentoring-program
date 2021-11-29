@@ -46,16 +46,8 @@ async function asyncPromiseReject() {
  * using async/await syntax
  * @returns 
  */
-// async function asyncPromiseAll() {
-//   let a = [];
-//   a.push(await getDogs(), await getCats(), await getBirds());
-//   return a;
-//   //чёт мне кажется, что от меня тут хотелось другое, но оно работает и я использовал async/await
-//   //хотя в './utils/utilPromises' там же "async function getAnimals()"
-// }
 async function asyncPromiseAll() {
-  return Promise.all([getDogs(), getCats(), getBirds()]);
-  //в чём тогда разница от задания './utils/utilPromises' Task-5 ??"
+  return (await Promise.all([getDogs(), getCats(), getBirds()]));
 }
 
 module.exports = {
