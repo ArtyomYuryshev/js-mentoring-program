@@ -30,9 +30,9 @@ describe('Fetch method', () => {
 describe('JSON Parser', () => {
     let parserJson;
 
-    before(() => {
+    before((done) => {
         cleanUpArtifacts();
-        jsonParser();
+        jsonParser(done);
     });
 
     beforeEach(() => parserJson = require('../parser/parsed.json'));

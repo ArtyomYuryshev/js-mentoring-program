@@ -23,8 +23,8 @@
  */
 const fs = require('fs');
 
-const jsonParser = () => {
-
+const jsonParser = (done) => {
+	done();
 };
 
 module.exports = {
