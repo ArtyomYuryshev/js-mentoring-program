@@ -16,6 +16,7 @@
  */
 const fetch = require('node-fetch');
 const fs = require('fs/promises');
+const path = require("path");
 
 /**
  * Run fetch method inside the function
@@ -29,8 +30,7 @@ const sendRequest = async () => {
 		.then(res => res.json()
 		.then(data => data.filter(item => item.id < 20))
 		.then(res => JSON.stringify(res, null, '\t')));
-	console.log(res);
-	fs.writeFile('./response.json', res, err => {
+	fs.writeFile(path.join(__dirname, "response.json"), res, err => {
 		if (err) console.log(err);
 	});
 };
