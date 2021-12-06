@@ -24,7 +24,7 @@
 const fs = require('fs');
 const path = require("path");
 
-const jsonParser = (done) => {
+const jsonParser = async (done) => {
 	fs.readFile(path.join(__dirname, "test.json"), 'utf-8', (err, data) => {
 		if (err) console.log(err);
 
@@ -38,10 +38,9 @@ const jsonParser = (done) => {
 
 		fs.writeFile(path.join(__dirname, "parsed.json"), string, err => {
 			if (err) console.log(err);
+			done();
 		});
 	})
-
-	done();
 };
 
 module.exports = {
