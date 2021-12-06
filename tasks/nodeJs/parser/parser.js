@@ -24,7 +24,7 @@
 const fs = require('fs');
 const path = require("path");
 
-const jsonParser = async (done) => {
+const jsonParser = (done) => {
 	fs.readFile(path.join(__dirname, "test.json"), 'utf-8', (err, data) => {
 		if (err) console.log(err);
 
