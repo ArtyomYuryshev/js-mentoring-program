@@ -25,22 +25,20 @@ const fs = require('fs');
 const path = require("path");
 
 const jsonParser = (done) => {
-	fs.readFile(path.join(__dirname, "test.json"), 'utf-8', (err, data) => {
-		if (err) console.log(err);
 
-		const parsed = JSON.parse(data)
-			.list.entries.map(
-				(entries) => "http://doc.epam.com/" + entries.entry.name.slice(0, -5)
-			)
-			.map((docId) => ({ docId }));
+	const data = fs.readFileSync(path.join(__dirname, "test.json"), 'utf-8');
 
-		const string = JSON.stringify(parsed, null, "\t");
+	const parsed = JSON.parse(data)
+		.list.entries.map(
+			(entries) => "http://doc.epam.com/" + entries.entry.name.slice(0, -5)
+		)
+		.map((docId) => ({ docId }));
 
-		fs.writeFile(path.join(__dirname, "parsed.json"), string, err => {
-			if (err) console.log(err);
-			done();
-		});
-	})
+	const string = JSON.stringify(parsed, null, "\t");
+
+	fs.writeFileSync(path.join(__dirname, "parsed.json"), string);
+
+	done();
 };
 
 module.exports = {
