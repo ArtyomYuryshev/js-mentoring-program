@@ -22,12 +22,23 @@
  * 2. Check yourself by running "npm run test:nodejs"
  */
 const fs = require('fs');
+const path = require("path");
 
-const jsonParser = () => {
+const jsonParser = (done) => {
 
+	const data = require("./test.json");
+	const parsed = data.list.entries.map(
+		(entries) => {
+			return ({ docId: "http://doc.epam.com/" + entries.entry.name.slice(0, -5) }); //как-то мне не особо нравится этот вариант, но как подругому в один map засунуть я не понял
+		});
+
+	const string = JSON.stringify(parsed, null, "\t");
+
+	fs.writeFileSync(path.join(__dirname, "parsed.json"), string);
+
+	done();
 };
 
 module.exports = {
 	jsonParser
 };
-
