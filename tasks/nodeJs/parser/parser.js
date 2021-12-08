@@ -24,7 +24,6 @@
 const fs = require('fs');
 const path = require("path");
 
-
 const jsonParser = (done) => {
 
 	const data = require("./test.json");
@@ -32,7 +31,6 @@ const jsonParser = (done) => {
 		(entries) => {
 			return ({ docId: "http://doc.epam.com/" + entries.entry.name.slice(0, -5) }); //как-то мне не особо нравится этот вариант, но как подругому в один map засунуть я не понял
 		});
-
 
 	const string = JSON.stringify(parsed, null, "\t");
 
