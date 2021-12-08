@@ -32,9 +32,7 @@ const sendRequest = async () => {
 	const data = json.filter(item => item.id < 20);
 	const str = JSON.stringify(data, null, '\t');
 
-	fs.writeFile(path.join(__dirname, "response.json"), str, err => {
-		if (err) console.log(err);
-	});
+	await fs.writeFile(path.join(__dirname, "response.json"), str); //надуюсь я понял правильно)
 };
 
 module.exports = {
