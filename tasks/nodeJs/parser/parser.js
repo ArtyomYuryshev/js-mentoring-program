@@ -24,14 +24,13 @@
 const fs = require('fs');
 const path = require("path");
 
+
 const jsonParser = (done) => {
 
-	const data = fs.readFileSync(path.join(__dirname, "test.json"), 'utf-8');
-
-	const parsed = JSON.parse(data)
-		.list.entries.map(
-			(entries) => "http://doc.epam.com/" + entries.entry.name.slice(0, -5)
-		)
+	const data = require("./test.json");
+	const parsed = data.list.entries.map(
+		(entries) => "http://doc.epam.com/" + entries.entry.name.slice(0, -5)
+	)
 		.map((docId) => ({ docId }));
 
 	const string = JSON.stringify(parsed, null, "\t");

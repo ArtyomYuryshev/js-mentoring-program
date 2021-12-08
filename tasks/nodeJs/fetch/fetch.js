@@ -26,11 +26,13 @@ const sendRequest = async () => {
 	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
 		method: "GET",
 		headers: {}
-	})
-		.then(res => res.json()
-		.then(data => data.filter(item => item.id < 20))
-		.then(res => JSON.stringify(res, null, '\t')));
-	fs.writeFile(path.join(__dirname, "response.json"), res, err => {
+	});
+
+	const json = await res.json();
+	const data = json.filter(item => item.id < 20);
+	const str = JSON.stringify(data, null, '\t');
+
+	fs.writeFile(path.join(__dirname, "response.json"), str, err => {
 		if (err) console.log(err);
 	});
 };
