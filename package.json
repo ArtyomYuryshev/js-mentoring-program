@@ -1,20 +1,24 @@
 {
   "name": "js-mentoring-program",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "JavaScript Mentoring Program",
+  "license": "EPAM Systems",
   "scripts": {
-    "test:intro": "mocha tasks/introduction/*.spec.js",
-    "test:variables": "mocha tasks/variables/test/*.spec.js",
-    "test:cycles": "mocha tasks/cycles/test/*.spec.js",
-    "test:condition": "mocha tasks/condition/test/*.spec.js",
-    "test:functions": "mocha tasks/functions/test/*.spec.js",
-    "test:arrays": "mocha tasks/arrays/test/*.spec.js",
-    "test:strings": "mocha tasks/strings/test/*.spec.js",
-    "test:objects": "mocha tasks/oop/test/objects.spec.js",
-    "test:classes": "mocha tasks/oop/test/classes.spec.js",
-    "test:po": "mocha tasks/oop/test/po.spec.js",
-    "test:async": "mocha tasks/async/test/*.spec.js",
-    "test:nodejs": "mocha tasks/nodeJs/test/*.spec.js"
+    "prepare": "husky install",
+    "lint": "prettier -w .",
+    "postinstall": "npx husky install",
+    "test:intro": "mocha tasks/module-1/*.spec.js",
+    "test:variables": "mocha tasks/module-2/test/*.spec.js",
+    "test:cycles": "mocha tasks/module-3/test/cycles.spec.js",
+    "test:condition": "mocha tasks/module-3/test/condition.spec.js",
+    "test:functions": "mocha tasks/module-4/test/*.spec.js",
+    "test:arrays": "mocha tasks/module-5/test/arrays.spec.js",
+    "test:strings": "mocha tasks/module-5/test/strings.spec.js",
+    "test:objects": "mocha tasks/module-6/test/objects.spec.js",
+    "test:classes": "mocha tasks/module-6/test/classes.spec.js",
+    "test:po": "mocha tasks/module-6/test/po.spec.js",
+    "test:async": "mocha tasks/module-7/test/*.spec.js",
+    "test:nodejs": "mocha tasks/module-8/test/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -22,17 +26,23 @@
   },
   "authors": [
     "Dzmitry_Shaplyka@epam.com",
-    "Oleksandr_Halichenko@epam.com",
-    "Artyom_Yuryshev@epam.com"
+    "Oleksandr_Halichenko@epam.com"
   ],
-  "license": "EPAM Systems",
   "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^7.0.1",
-    "node-fetch": "^2.6.6",
-    "sinon": "latest"
+    "@types/chai": "4.3.4",
+    "@types/chai-as-promised": "7.1.5",
+    "@types/mocha": "10.0.1",
+    "@types/node": "16.18.6",
+    "@types/sinon": "10.0.13",
+    "chai": "4.3.7",
+    "chai-as-promised": "7.1.1",
+    "husky": "8.0.2",
+    "mocha": "10.1.0",
+    "node-fetch": "2.6.7",
+    "prettier": "2.8.1",
+    "sinon": "14.0.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }
