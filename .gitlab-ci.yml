@@ -1,0 +1,22 @@
+stages:
+  - static-analyzer
+
+image: node:16
+
+unit-test:
+  stage: static-analyzer
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  before_script:
+    - npm ci
+  script:
+    - node ./.dofiles/run-unittests.js
+
+lint:
+  stage: static-analyzer
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  before_script:
+    - npm ci
+  script:
+    - npx prettier -c .
